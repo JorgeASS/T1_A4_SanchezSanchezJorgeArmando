@@ -37,17 +37,16 @@ class VentanaCalculadora extends JFrame implements ActionListener{
 		
 		txtStand = new JLabel("Estandar");
 		gbc.fill = GridBagConstraints.HORIZONTAL;
-		bgcGrid(txtStand, 1, 0, 2, 1);
+		bgcGrid(txtStand, 1, 0, 4, 1);
 		
 		txtCloock = new JLabel("└─");
-		bgcGrid(txtCloock, 3, 0, 1, 1);
+		bgcGrid(txtCloock, 5, 0, 1, 1);
 		
 		//-----------------------------------------------
 		//Fila 1 ----------------------------------------
 		
-		boxRes = new JTextField("0");
-		gbc.fill = GridBagConstraints.HORIZONTAL;
-		bgcGrid(boxRes, 0, 1, 6, 1);
+		boxRes = new JTextField("Resultado");
+		bgcGridH(boxRes, 0, 1, 6, 1);
 		
 		//-----------------------------------------------
 		
@@ -106,16 +105,16 @@ class VentanaCalculadora extends JFrame implements ActionListener{
 		//Fila 5 ----------------------------------------
 		
 		btn7 = new JButton("7");
-		bgcGrid(btnPorc, 0, 5, 1, 1);
+		bgcGrid(btn7, 0, 5, 1, 1);
 		
 		btn8 = new JButton("8");
-		bgcGrid(btnRaiz, 1, 5, 1, 1);
+		bgcGrid(btn8, 1, 5, 1, 1);
 		
 		btn9 = new JButton("9");
-		bgcGrid(btnCuad, 2, 5, 1, 1);
+		bgcGrid(btn9, 2, 5, 1, 1);
 		
 		btnX = new JButton("X");
-		bgcGrid(btnUnoSx, 3, 5, 1, 1);
+		bgcGrid(btnX, 3, 5, 1, 1);
 		
 		//-----------------------------------------------
 		//Fila 6 ----------------------------------------
@@ -151,20 +150,20 @@ class VentanaCalculadora extends JFrame implements ActionListener{
 		//Fila 8 ----------------------------------------
 		
 		btnmm = new JButton("±");
-		bgcGrid(btnPorc, 0, 8, 1, 1);
+		bgcGrid(btnmm, 0, 8, 1, 1);
 		
 		btn0 = new JButton("0");
-		bgcGrid(btnRaiz, 1, 8, 1, 1);
+		bgcGrid(btn0, 1, 8, 1, 1);
 		
 		btnP = new JButton(".");
-		bgcGrid(btnCuad, 2, 8, 1, 1);
+		bgcGrid(btnP, 2, 8, 1, 1);
 		
 		btnIgual = new JButton("=");
-		bgcGrid(btnUnoSx, 3, 8, 1, 1);
+		bgcGrid(btnIgual, 3, 8, 1, 1);
 		
 		//-----------------------------------------------
 		
-		//--------------------------------------------------------------------------------------
+		//-------------------------------------------fin del codigo-----------------------------
 		
 		//-----------------------------------------Complemento de ventana---------------------------------
 		pack();
@@ -183,6 +182,18 @@ class VentanaCalculadora extends JFrame implements ActionListener{
 		gbc.gridy = y;
 		gbc.gridwidth = w;
 		gbc.gridheight = h;
+		gbl.setConstraints(c, gbc);
+		add(c);
+	}
+	public void bgcGridH (JComponent c, int x, int y, int w, int h) {
+		
+		GridBagConstraints gbc = new GridBagConstraints();
+		
+		gbc.gridx = x;
+		gbc.gridy = y;
+		gbc.gridwidth = w;
+		gbc.gridheight = h;
+		gbc.fill = GridBagConstraints.HORIZONTAL;
 		gbl.setConstraints(c, gbc);
 		add(c);
 	}
